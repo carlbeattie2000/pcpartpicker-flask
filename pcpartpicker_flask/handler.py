@@ -88,7 +88,7 @@ class Handler:
         start = time.perf_counter()
         loop = asyncio.get_event_loop()
         if loop.is_running():
-            raw_data: Dict[str, str] = self.scraper.retrieve(parts_to_download)
+            raw_data: Dict[str, str] = await self.scraper.retrieve(parts_to_download)
         else:
             raw_data: Dict[str, str] = loop.run_until_complete(self.scraper.retrieve(parts_to_download))
         total_time = time.perf_counter() - start

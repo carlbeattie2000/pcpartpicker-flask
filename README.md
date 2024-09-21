@@ -20,7 +20,7 @@ pip install pcpartpicker-flask
 ## Examples:
 In order to use the API, simply import API from the pcpartpicker package.
 ```python
-from pcpartpicker import API
+from pcpartpicker_flask import API
 ```
 You can then instantiate the API class and use it to make requests.
 ```python
