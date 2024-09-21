@@ -54,7 +54,7 @@ class Handler:
         self._region = region
         self.scraper = Scraper(region)
 
-    def retrieve(self, *args, force_refresh=False) -> PartData:
+    async def retrieve(self, *args, force_refresh=False) -> PartData:
         """
         Hidden function that is designed to retrieve and parse part data from PCPartPicker.
 
@@ -87,7 +87,10 @@ class Handler:
 
         start = time.perf_counter()
         loop = asyncio.get_event_loop()
-        raw_data: Dict[str, str] = loop.run_until_complete(self.scraper.retrieve(parts_to_download))
+        if loop.is_running():
+            raw_data: Dict[str, str] = self.scraper.retrieve(parts_to_download)
+        else:
+            raw_data: Dict[str, str] = loop.run_until_complete(self.scraper.retrieve(parts_to_download))
         total_time = time.perf_counter() - start
 
         logger.debug(f"Completed downloading! Time elapsed is {total_time} seconds.")
