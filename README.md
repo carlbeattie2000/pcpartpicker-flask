@@ -14,7 +14,7 @@ crashes when using it with flask and it's event loop
 ## Installation:
 Package retrieval and installation can be easily accomplished through pip.
 ```python
-pip install pcpartpicker
+pip install pcpartpicker-flask
 ```
 
 ## Examples:

@@ -7,8 +7,8 @@ def read(file_name: str):
 
 
 setup(
-    name="pcpartpicker",
-    version="3.0.0",
+    name="pcpartpicker-flask",
+    version="3.0.1",
     author="Jonathan Vusich",
     author_email="jonathanvusich@gmail.com",
     description="A fast, simple API for PCPartPicker.com.",
@@ -16,7 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     license="GPL",
     keywords="pcpartpicker api webscraper python3",
-    url="https://github.com/JonathanVusich/pcpartpicker",
+    url="https://github.com/carlbeattie2000/pcpartpicker-flask",
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests", "utils"]),
     install_requires=read("requirements.txt"),
     classifiers=[
