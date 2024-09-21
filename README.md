@@ -5,8 +5,11 @@
 ![](https://img.shields.io/pypi/dm/pcpartpicker.svg)
 
 This is an unofficial Python 3.7+ API for the website pcpartpicker.com.
-It is written using asynchronous requests for efficient data retrieval. 
+It is written using asynchronous requests for efficient data retrieval.
 This package is currently in a stable beta.
+
+Updated to support flask: Attempts to create a new event loop, which caused
+crashes when using it with flask and it's event loop
 
 ## Installation:
 Package retrieval and installation can be easily accomplished through pip.
@@ -25,7 +28,7 @@ api = API()
 cpu_data = api.retrieve("cpu")
 all_data = api.retrieve_all()
 ```
-`api.retrieve()` and `api.retrieve_all()` methods both return a `PartData` instance, which contains a timestamp and a `to_json()` method. 
+`api.retrieve()` and `api.retrieve_all()` methods both return a `PartData` instance, which contains a timestamp and a `to_json()` method.
 
 A list of supported parts can be obtained in the following manner:
 ```python
